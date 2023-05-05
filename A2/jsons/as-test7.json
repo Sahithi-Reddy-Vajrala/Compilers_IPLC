@@ -1,0 +1,421 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+]
+]
+,
+  "structs": [
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["a",         "var",         "local",       4,      -4,"float"
+]
+,
+["b",         "var",         "local",       4,      -8,"float"
+]
+,
+["c",         "var",         "local",       4,     -72,"float"
+]
+,
+["d",         "var",         "local",       4,     -76,"int*"
+]
+,
+["e",         "var",         "local",       4,     -80,"float*"
+]
+,
+["f",         "var",         "local",       4,     -12,"float"
+]
+,
+["g",         "var",         "local",       4,     -16,"float"
+]
+,
+["h",         "var",         "local",       4,     -20,"float"
+]
+,
+["i",         "var",         "local",       4,     -24,"float"
+]
+,
+["j",         "var",         "local",       4,     -28,"float"
+]
+,
+["k",         "var",         "local",      40,     -68,"float[10]"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "c"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{ "op_unary": {
+"op": "UMINUS"
+,
+"child": 
+{
+"intconst": 34}
+}
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "a"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "UMINUS"
+,
+"child": 
+{
+"floatconst": 7.5}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "UMINUS"
+,
+"child": 
+{
+"identifier": "a"
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "UMINUS"
+,
+"child": 
+{
+"identifier": "c"
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{ "op_unary": {
+"op": "NOT"
+,
+"child": 
+{ "op_binary": {
+"op": "MULT_FLOAT"
+,
+"left": 
+{ "op_unary": {
+"op": "UMINUS"
+,
+"child": 
+{
+"floatconst": 0}
+}
+}
+,
+"right": 
+{
+"floatconst": 2.3}
+}
+}
+}
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "e"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "a"
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "c"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "e"
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "e"
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"floatconst": 9}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "k"
+}
+,
+"index": 
+{
+"intconst": 3}
+}
+}
+,
+"right": 
+{
+"floatconst": 3.3}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "k"
+}
+,
+"index": 
+{
+"intconst": 4}
+}
+}
+,
+"right": 
+{
+"floatconst": 4.3}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "k"
+}
+,
+"index": 
+{
+"intconst": 5}
+}
+}
+,
+"right": 
+{
+"floatconst": 5.3}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "k"
+}
+,
+"index": 
+{
+"intconst": 6}
+}
+}
+,
+"right": 
+{
+"floatconst": 6.3}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "e"
+}
+}
+}
+,
+"right": 
+{
+"floatconst": 10.23}
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%d%f\n"
+}
+,
+{ "op_binary": {
+"op": "EQ_OP_FLOAT"
+,
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "k"
+}
+,
+"index": 
+{
+"intconst": 4}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+,
+{
+"identifier": "c"
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+]
+}

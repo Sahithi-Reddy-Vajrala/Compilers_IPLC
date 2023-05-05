@@ -1,0 +1,347 @@
+{"globalST": 
+[[         "f",         "fun",         "global",       0,       0,"struct s1"
+],
+[         "g",         "fun",         "global",       0,       0,"int"
+],
+[         "main",         "fun",         "global",       0,       0,"int"
+],
+[         "struct s1",         "struct",         "global",      12,     "-","-"
+]
+]
+,
+  "structs": [
+{
+"name": "struct s1",
+"localST": 
+[
+["a",         "var",         "local",      12,       0,"int[3]"
+]
+]
+}
+],
+  "functions": [
+{
+"name": "f",
+"localST": 
+[
+["tra",         "var",         "local",      12,     -12,"struct s1"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "tra"
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{
+"intconst": 0}
+}
+}
+,
+"right": 
+{
+"intconst": 100}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "tra"
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{
+"intconst": 1}
+}
+}
+,
+"right": 
+{
+"intconst": 101}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "tra"
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{
+"intconst": 2}
+}
+}
+,
+"right": 
+{
+"intconst": 102}
+}
+}
+,
+{
+"return": 
+{
+"identifier": "tra"
+}
+}
+
+
+]
+}
+}
+,
+{
+"name": "g",
+"localST": 
+[
+["a",         "var",         "local",       4,      -4,"int"
+]
+,
+["b",         "var",         "local",       4,      -8,"int"
+]
+,
+["c",         "var",         "local",       4,     -12,"int"
+]
+,
+["d",         "var",         "local",       4,     -16,"int"
+]
+,
+["e",         "var",         "local",       4,     -20,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "a"
+}
+,
+"right": 
+{
+"intconst": 1234}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{
+"intconst": 23456}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "c"
+}
+,
+"right": 
+{
+"intconst": 34567}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "d"
+}
+,
+"right": 
+{
+"intconst": 45678}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "e"
+}
+,
+"right": 
+{
+"intconst": 56789}
+}
+}
+,
+{
+"return": 
+{
+"intconst": 1}
+}
+
+
+]
+}
+}
+,
+{
+"name": "main",
+"localST": 
+[
+["mystr",         "var",         "local",      12,     -16,"struct s1"
+]
+,
+["x",         "var",         "local",       4,      -4,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%d\n"
+}
+,
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "f"
+}
+,
+"params": [
+
+]
+}
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "g"
+}
+,
+"params": [
+
+]
+}
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "f"
+}
+,
+"params": [
+
+]
+}
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "g"
+}
+,
+"params": [
+
+]
+}
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+]
+}

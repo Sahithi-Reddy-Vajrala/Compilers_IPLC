@@ -1,0 +1,374 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+]
+]
+,
+  "structs": [
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["arr",         "var",         "local",     400,    -408,"float[100]"
+]
+,
+["i",         "var",         "local",       4,      -8,"int"
+]
+,
+["n",         "var",         "local",       4,      -4,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter the number of elements (1 to 100): "
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "n"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter number%d: "
+}
+,
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%f"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "arr"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "LT_OP_FLOAT"
+,
+"left": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "arr"
+}
+,
+"index": 
+{
+"intconst": 0}
+}
+}
+,
+"right": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "arr"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+}
+}
+,
+"then": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "arr"
+}
+,
+"index": 
+{
+"intconst": 0}
+}
+}
+,
+"right": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "arr"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+"empty"
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Largest element = %f"
+}
+,
+{ "arrayref": {
+"array": 
+{
+"identifier": "arr"
+}
+,
+"index": 
+{
+"intconst": 0}
+}
+}
+
+
+]
+}
+}
+,
+{
+"return": 
+{
+"intconst": 0}
+}
+
+
+]
+}
+}
+]
+}

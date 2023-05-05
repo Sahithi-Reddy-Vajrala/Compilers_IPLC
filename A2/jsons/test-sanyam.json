@@ -1,0 +1,1 @@
+Error at line 5: Invalid operands types for binary ==, "int" and "int*"

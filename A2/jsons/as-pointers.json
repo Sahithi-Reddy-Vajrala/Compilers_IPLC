@@ -1,0 +1,471 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+],
+[         "struct person",         "struct",         "global",      12,     "-","-"
+]
+]
+,
+  "structs": [
+{
+"name": "struct person",
+"localST": 
+[
+["age",         "var",         "local",       4,       8,"int"
+]
+,
+["id",         "var",         "local",       4,       0,"int"
+]
+,
+["weight",         "var",         "local",       4,       4,"float"
+]
+]
+}
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["i",         "var",         "local",       4,      -8,"int"
+]
+,
+["n",         "var",         "local",       4,      -4,"int"
+]
+,
+["persons",         "var",         "local",     360,    -372,"struct person[30]"
+]
+,
+["ptr",         "var",         "local",       4,     -12,"struct person*"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter the number of persons (<= 30): "
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "n"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "persons"
+}
+,
+"index": 
+{
+"intconst": 0}
+}
+}
+}
+}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter person's Id, weight and age respectively: "
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d %f %d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrow": {
+"pointer": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"field": 
+{
+"identifier": "id"
+}
+}
+}
+}
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrow": {
+"pointer": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"field": 
+{
+"identifier": "weight"
+}
+}
+}
+}
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrow": {
+"pointer": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"field": 
+{
+"identifier": "age"
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Displaying Information:\n"
+}
+
+
+]
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Id: %d\tWeight: %f\tAge: %d\n"
+}
+,
+{ "arrow": {
+"pointer": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"field": 
+{
+"identifier": "id"
+}
+}
+}
+,
+{ "arrow": {
+"pointer": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"field": 
+{
+"identifier": "weight"
+}
+}
+}
+,
+{ "arrow": {
+"pointer": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "ptr"
+}
+,
+"right": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"field": 
+{
+"identifier": "age"
+}
+}
+}
+
+
+]
+}
+}
+}
+}
+,
+{
+"return": 
+{
+"intconst": 0}
+}
+
+
+]
+}
+}
+]
+}

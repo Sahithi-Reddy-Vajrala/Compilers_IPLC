@@ -1,0 +1,160 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+]
+]
+,
+  "structs": [
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["x",         "var",         "local",       4,      -4,"int"
+]
+,
+["y",         "var",         "local",       4,      -8,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{
+"intconst": 10}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+"empty"
+}
+}
+,
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "GT_OP_INT"
+,
+"left": 
+{
+"identifier": "y"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+,
+"then": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MINUS_INT"
+,
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "y"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "y"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+"empty"
+}
+}
+
+
+]
+}
+}
+]
+}

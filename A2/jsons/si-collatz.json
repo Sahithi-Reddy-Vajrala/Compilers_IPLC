@@ -1,0 +1,685 @@
+{"globalST": 
+[[         "collatz",         "fun",         "global",       0,       0,"struct int_vector"
+],
+[         "is_even",         "fun",         "global",       0,       0,"int"
+],
+[         "main",         "fun",         "global",       0,       0,"int"
+],
+[         "next_term",         "fun",         "global",       0,       0,"int"
+],
+[         "struct int_vector",         "struct",         "global",     408,     "-","-"
+]
+]
+,
+  "structs": [
+{
+"name": "struct int_vector",
+"localST": 
+[
+["curr",         "var",         "local",       4,     404,"int"
+]
+,
+["curr1",         "var",         "local",       4,       0,"float"
+]
+,
+["vector",         "var",         "local",     400,       4,"int[100]"
+]
+]
+}
+],
+  "functions": [
+{
+"name": "collatz",
+"localST": 
+[
+["n",         "var",         "param",       4,      12,"int"
+]
+,
+["seq",         "var",         "local",     408,    -408,"struct int_vector"
+]
+,
+["term",         "var",         "local",       4,    -412,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "term"
+}
+,
+"right": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "NE_OP_INT"
+,
+"left": 
+{
+"identifier": "term"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "term"
+}
+,
+"right": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "next_term"
+}
+,
+"params": [
+{
+"identifier": "term"
+}
+
+
+]
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "vector"
+}
+}
+}
+,
+"index": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+}
+}
+,
+"right": 
+{
+"identifier": "term"
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "vector"
+}
+}
+}
+,
+"index": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+}
+}
+,
+"right": 
+{
+"identifier": "term"
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "member": {
+"struct": 
+{
+"identifier": "seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+{
+"return": 
+{
+"identifier": "seq"
+}
+}
+
+
+]
+}
+}
+,
+{
+"name": "is_even",
+"localST": 
+[
+["n",         "var",         "param",       4,      12,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "EQ_OP_FLOAT"
+,
+"left": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{ "op_binary": {
+"op": "DIV_INT"
+,
+"left": 
+{
+"identifier": "n"
+}
+,
+"right": 
+{
+"intconst": 2}
+}
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "DIV_FLOAT"
+,
+"left": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"right": 
+{
+"floatconst": 2}
+}
+}
+}
+}
+,
+"then": 
+{
+"return": 
+{
+"intconst": 1}
+}
+,
+"else": 
+{
+"return": 
+{
+"intconst": 0}
+}
+}
+}
+
+
+]
+}
+}
+,
+{
+"name": "main",
+"localST": 
+[
+["argc",         "var",         "param",       4,      12,"int"
+]
+,
+["collatz_seq",         "var",         "local",     408,    -412,"struct int_vector"
+]
+,
+["i",         "var",         "local",       4,    -416,"int"
+]
+,
+["n",         "var",         "local",       4,      -4,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter a number "
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "n"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "collatz_seq"
+}
+,
+"right": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "collatz"
+}
+,
+"params": [
+{
+"identifier": "n"
+}
+
+
+]
+}
+}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "member": {
+"struct": 
+{
+"identifier": "collatz_seq"
+}
+,
+"field": 
+{
+"identifier": "curr"
+}
+}
+}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%d\n"
+}
+,
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "collatz_seq"
+}
+,
+"field": 
+{
+"identifier": "vector"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+,
+{
+"return": 
+{
+"intconst": 0}
+}
+
+
+]
+}
+}
+,
+{
+"name": "next_term",
+"localST": 
+[
+["n",         "var",         "param",       4,      12,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "if": {
+"cond": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "is_even"
+}
+,
+"params": [
+{
+"identifier": "n"
+}
+
+
+]
+}
+}
+,
+"then": 
+{
+"seq": [
+{
+"return": 
+{ "op_binary": {
+"op": "DIV_INT"
+,
+"left": 
+{
+"identifier": "n"
+}
+,
+"right": 
+{
+"intconst": 2}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+{
+"return": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "op_binary": {
+"op": "MULT_INT"
+,
+"left": 
+{
+"intconst": 3}
+,
+"right": 
+{
+"identifier": "n"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+]
+}

@@ -1,0 +1,348 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+],
+[         "mod",         "fun",         "global",       0,       0,"int"
+],
+[         "struct person",         "struct",         "global",      32,     "-","-"
+]
+]
+,
+  "structs": [
+{
+"name": "struct person",
+"localST": 
+[
+["age",         "var",         "local",       4,      28,"int"
+]
+,
+["id",         "var",         "local",      24,       0,"int**[2][3]"
+]
+,
+["weight",         "var",         "local",       4,      24,"float"
+]
+]
+}
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["arr",         "var",         "local",       8,     -24,"int[2]"
+]
+,
+["num",         "var",         "local",       4,      -4,"int"
+]
+,
+["originalNum",         "var",         "local",       4,      -8,"int"
+]
+,
+["remainder",         "var",         "local",       4,     -12,"int"
+]
+,
+["result",         "var",         "local",       4,     -16,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter a three-digit integer"
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "num"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "result"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "num"
+}
+,
+"right": 
+{
+"intconst": 153}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "originalNum"
+}
+,
+"right": 
+{
+"identifier": "num"
+}
+}
+}
+,
+{ "while": {
+"cond": 
+{ "op_binary": {
+"op": "NE_OP_INT"
+,
+"left": 
+{
+"identifier": "originalNum"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"stmt": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "remainder"
+}
+,
+"right": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "mod"
+}
+,
+"params": [
+{
+"identifier": "originalNum"
+}
+,
+{
+"intconst": 10}
+
+
+]
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "result"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "result"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MULT_INT"
+,
+"left": 
+{ "op_binary": {
+"op": "MULT_INT"
+,
+"left": 
+{
+"identifier": "remainder"
+}
+,
+"right": 
+{
+"identifier": "remainder"
+}
+}
+}
+,
+"right": 
+{
+"identifier": "remainder"
+}
+}
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "originalNum"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "DIV_INT"
+,
+"left": 
+{
+"identifier": "originalNum"
+}
+,
+"right": 
+{
+"intconst": 10}
+}
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "EQ_OP_INT"
+,
+"left": 
+{
+"identifier": "result"
+}
+,
+"right": 
+{
+"identifier": "num"
+}
+}
+}
+,
+"then": 
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%d is an Armstrong number."
+}
+,
+{
+"identifier": "num"
+}
+
+
+]
+}
+}
+,
+"else": 
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%d is not an Armstrong number."
+}
+,
+{
+"identifier": "num"
+}
+
+
+]
+}
+}
+}
+}
+,
+{
+"return": 
+{ "op_unary": {
+"op": "TO_INT"
+,
+"child": 
+{
+"floatconst": 4}
+}
+}
+}
+
+
+]
+}
+}
+,
+{
+"name": "mod",
+"localST": 
+[
+["a",         "var",         "param",       4,      16,"int"
+]
+,
+["b",         "var",         "param",       4,      12,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+
+]
+}
+}
+]
+}

@@ -1,0 +1,518 @@
+{"globalST": 
+[[         "init_abc",         "fun",         "global",       0,       0,"struct abc"
+],
+[         "main",         "fun",         "global",       0,       0,"int"
+],
+[         "struct abc",         "struct",         "global",      12,     "-","-"
+]
+]
+,
+  "structs": [
+{
+"name": "struct abc",
+"localST": 
+[
+["__er",         "var",         "local",       4,       8,"float"
+]
+,
+["_qw",         "var",         "local",       4,       0,"int"
+]
+,
+["qw",         "var",         "local",       4,       4,"int"
+]
+]
+}
+],
+  "functions": [
+{
+"name": "init_abc",
+"localST": 
+[
+["ABC",         "var",         "local",       4,     -16,"struct abc*"
+]
+,
+["p1",         "var",         "param",       4,      32,"int*"
+]
+,
+["p2",         "var",         "param",       4,      28,"int*"
+]
+,
+["p3",         "var",         "param",       4,      24,"float"
+]
+,
+["p4",         "var",         "param",      12,      12,"struct abc"
+]
+,
+["sABC",         "var",         "local",      12,     -12,"struct abc"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "ABC"
+}
+,
+"field": 
+{
+"identifier": "_qw"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p2"
+}
+}
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "ABC"
+}
+,
+"field": 
+{
+"identifier": "qw"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "op_unary": {
+"op": "PP"
+,
+"child": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "PP"
+,
+"child": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p2"
+}
+}
+}
+}
+}
+}
+}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "ABC"
+}
+,
+"field": 
+{
+"identifier": "__er"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_FLOAT"
+,
+"left": 
+{
+"identifier": "p3"
+}
+,
+"right": 
+{
+"floatconst": 8.97e-20}
+}
+}
+}
+}
+,
+{
+"return": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "ABC"
+}
+}
+}
+}
+
+
+]
+}
+}
+,
+{
+"name": "main",
+"localST": 
+[
+["ABC",         "var",         "local",      12,     -12,"struct abc"
+]
+,
+["argc",         "var",         "param",       4,      12,"int"
+]
+,
+["p1",         "var",         "local",       4,     -16,"int*"
+]
+,
+["p2",         "var",         "local",       4,     -20,"int*"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "p2"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "OR_OP"
+,
+"left": 
+{ "op_binary": {
+"op": "GT_OP_INT"
+,
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 5}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p2"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 5}
+}
+}
+}
+}
+,
+"then": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "ABC"
+}
+,
+"right": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "init_abc"
+}
+,
+"params": [
+{
+"identifier": "p1"
+}
+,
+{
+"identifier": "p2"
+}
+,
+{ "op_unary": {
+"op": "UMINUS"
+,
+"child": 
+{
+"floatconst": 12.8}
+}
+}
+,
+{
+"identifier": "ABC"
+}
+
+
+]
+}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+{
+"seq": [
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "NE_OP_INT"
+,
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p2"
+}
+}
+}
+}
+}
+,
+"then": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "ABC"
+}
+,
+"right": 
+{ "funcall": {
+"fname": 
+{
+"identifier": "init_abc"
+}
+,
+"params": [
+{
+"identifier": "p2"
+}
+,
+{
+"identifier": "p1"
+}
+,
+{
+"floatconst": 1.28e-05}
+,
+{
+"identifier": "ABC"
+}
+
+
+]
+}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p1"
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "DEREF"
+,
+"child": 
+{
+"identifier": "p2"
+}
+}
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{
+"return": 
+{
+"intconst": 0}
+}
+
+
+]
+}
+}
+]
+}

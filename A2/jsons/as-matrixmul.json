@@ -1,0 +1,915 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+]
+]
+,
+  "structs": [
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["a",         "var",         "local",      36,     -36,"int[3][3]"
+]
+,
+["b",         "var",         "local",      36,     -72,"int[3][3]"
+]
+,
+["c",         "var",         "local",      36,    -108,"int[3][3]"
+]
+,
+["i",         "var",         "local",       4,    -112,"int"
+]
+,
+["j",         "var",         "local",       4,    -116,"int"
+]
+,
+["k",         "var",         "local",       4,    -120,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter first array elements"
+}
+
+
+]
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "a"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "c"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "Enter second array elements"
+}
+
+
+]
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "scanf"
+}
+,
+"params": [
+{
+"stringconst": "%d"
+}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "b"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "k"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "k"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "k"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "k"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "c"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "c"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MULT_INT"
+,
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "a"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "k"
+}
+}
+}
+,
+"right": 
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "b"
+}
+,
+"index": 
+{
+"identifier": "k"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+}
+}
+}
+}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "j"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%d "
+}
+,
+{ "arrayref": {
+"array": 
+{ "arrayref": {
+"array": 
+{
+"identifier": "c"
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "j"
+}
+}
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "\n"
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+,
+{
+"return": 
+{
+"intconst": 0}
+}
+
+
+]
+}
+}
+]
+}

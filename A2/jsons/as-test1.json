@@ -1,0 +1,37 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+]
+]
+,
+  "structs": [
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["a",         "var",         "local",       4,      -4,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+"empty"
+,
+"empty"
+,
+"empty"
+,
+"empty"
+,
+"empty"
+,
+"empty"
+
+
+]
+}
+}
+]
+}

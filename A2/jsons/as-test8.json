@@ -1,0 +1,611 @@
+{"globalST": 
+[[         "foo",         "fun",         "global",       0,       0,"void"
+],
+[         "main",         "fun",         "global",       0,       0,"int"
+],
+[         "struct s1",         "struct",         "global",     124,     "-","-"
+],
+[         "struct s2",         "struct",         "global",    1092,     "-","-"
+]
+]
+,
+  "structs": [
+{
+"name": "struct s1",
+"localST": 
+[
+["a",         "var",         "local",      40,       0,"int[10]"
+]
+,
+["b",         "var",         "local",      80,      40,"float[20]"
+]
+,
+["c",         "var",         "local",       4,     120,"int*"
+]
+]
+}
+,
+{
+"name": "struct s2",
+"localST": 
+[
+["a",         "var",         "local",      96,       0,"float*[12][2]"
+]
+,
+["b",         "var",         "local",     992,      96,"struct s1[8]"
+]
+,
+["c",         "var",         "local",       4,    1088,"struct s2*"
+]
+]
+}
+],
+  "functions": [
+{
+"name": "foo",
+"localST": 
+[
+["demo",         "var",         "param",       4,      12,"struct s1*"
+]
+,
+["i",         "var",         "local",       4,      -4,"int"
+]
+,
+["mode",         "var",         "param",       4,      16,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 10}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "if": {
+"cond": 
+{
+"identifier": "mode"
+}
+,
+"then": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "demo"
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MULT_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 2}
+}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "demo"
+}
+,
+"field": 
+{
+"identifier": "a"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MULT_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 3}
+}
+}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+,
+{ "for": {
+"init": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 0}
+}
+}
+,
+"guard": 
+{ "op_binary": {
+"op": "LT_OP_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 20}
+}
+}
+,
+"step": 
+{ "assignE": {
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "PLUS_INT"
+,
+"left": 
+{
+"identifier": "i"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+}
+}
+,
+"body": 
+{
+"seq": [
+{ "if": {
+"cond": 
+{
+"identifier": "mode"
+}
+,
+"then": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "demo"
+}
+,
+"field": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MULT_FLOAT"
+,
+"left": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"right": 
+{
+"floatconst": 1.5}
+}
+}
+}
+}
+
+
+]
+}
+,
+"else": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "arrow": {
+"pointer": 
+{
+"identifier": "demo"
+}
+,
+"field": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "MULT_FLOAT"
+,
+"left": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"identifier": "i"
+}
+}
+}
+,
+"right": 
+{
+"floatconst": 2.5}
+}
+}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+,
+{
+"name": "main",
+"localST": 
+[
+["a",         "var",         "local",     124,    -124,"struct s1"
+]
+,
+["b",         "var",         "local",     124,    -248,"struct s1"
+]
+,
+["x",         "var",         "local",       4,    -252,"int"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "foo"
+}
+,
+"params": [
+{
+"intconst": 1}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "a"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "foo"
+}
+,
+"params": [
+{
+"intconst": 0}
+,
+{ "op_unary": {
+"op": "ADDRESS"
+,
+"child": 
+{
+"identifier": "b"
+}
+}
+}
+
+
+]
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "x"
+}
+,
+"right": 
+{
+"intconst": 1}
+}
+}
+,
+{ "assignS": {
+"left": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "a"
+}
+,
+"field": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"index": 
+{ "op_unary": {
+"op": "PP"
+,
+"child": 
+{
+"identifier": "x"
+}
+}
+}
+}
+}
+,
+"right": 
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "b"
+}
+,
+"field": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"index": 
+{
+"identifier": "x"
+}
+}
+}
+}
+}
+,
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%f, %f, %d\n"
+}
+,
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "a"
+}
+,
+"field": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"index": 
+{
+"intconst": 1}
+}
+}
+,
+{ "arrayref": {
+"array": 
+{ "member": {
+"struct": 
+{
+"identifier": "b"
+}
+,
+"field": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"index": 
+{
+"intconst": 2}
+}
+}
+,
+{
+"identifier": "x"
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+]
+}

@@ -1,0 +1,1 @@
+Error at line 9: Incompatible assignment when assigning to type "int*" from type "int(*)[20]"

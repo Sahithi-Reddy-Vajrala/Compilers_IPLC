@@ -1,0 +1,1 @@
+Error at line 8: Incompatible assignment when assigning to type "int*" from type "int"

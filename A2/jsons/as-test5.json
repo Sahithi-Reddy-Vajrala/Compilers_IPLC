@@ -1,0 +1,292 @@
+{"globalST": 
+[[         "main",         "fun",         "global",       0,       0,"int"
+]
+]
+,
+  "structs": [
+],
+  "functions": [
+{
+"name": "main",
+"localST": 
+[
+["a",         "var",         "local",       4,      -4,"float"
+]
+,
+["b",         "var",         "local",       4,      -8,"float"
+]
+,
+["c",         "var",         "local",       4,     -12,"float"
+]
+,
+["d",         "var",         "local",       4,     -16,"float"
+]
+,
+["z",         "var",         "local",       4,     -20,"float"
+]
+]
+,
+"ast": 
+{
+"seq": [
+{ "assignS": {
+"left": 
+{
+"identifier": "a"
+}
+,
+"right": 
+{
+"floatconst": 1}
+}
+}
+,
+{ "assignS": {
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"intconst": 4}
+}
+}
+}
+}
+,
+{ "if": {
+"cond": 
+{ "op_binary": {
+"op": "AND_OP"
+,
+"left": 
+{
+"identifier": "a"
+}
+,
+"right": 
+{ "op_binary": {
+"op": "AND_OP"
+,
+"left": 
+{ "op_binary": {
+"op": "OR_OP"
+,
+"left": 
+{ "op_binary": {
+"op": "PLUS_FLOAT"
+,
+"left": 
+{
+"identifier": "z"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{ "op_binary": {
+"op": "AND_OP"
+,
+"left": 
+{ "op_binary": {
+"op": "GE_OP_FLOAT"
+,
+"left": 
+{ "op_binary": {
+"op": "PLUS_FLOAT"
+,
+"left": 
+{
+"identifier": "a"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"intconst": 3}
+}
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"intconst": 5}
+}
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "NOT"
+,
+"child": 
+{ "op_binary": {
+"op": "LT_OP_FLOAT"
+,
+"left": 
+{
+"identifier": "b"
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"intconst": 5}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+,
+"right": 
+{ "op_binary": {
+"op": "NE_OP_FLOAT"
+,
+"left": 
+{ "op_binary": {
+"op": "PLUS_FLOAT"
+,
+"left": 
+{ "op_binary": {
+"op": "MULT_FLOAT"
+,
+"left": 
+{
+"identifier": "a"
+}
+,
+"right": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"right": 
+{
+"identifier": "b"
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "TO_FLOAT"
+,
+"child": 
+{
+"intconst": 7}
+}
+}
+}
+}
+}
+}
+,
+"right": 
+{ "op_unary": {
+"op": "PP"
+,
+"child": 
+{
+"identifier": "d"
+}
+}
+}
+}
+}
+}
+}
+,
+"then": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%f\n"
+}
+,
+{
+"identifier": "d"
+}
+
+
+]
+}
+}
+
+
+]
+}
+,
+"else": 
+{
+"seq": [
+{ "proccall": {
+"fname": 
+{
+"identifier": "printf"
+}
+,
+"params": [
+{
+"stringconst": "%f%f\n "
+}
+,
+{
+"identifier": "z"
+}
+,
+{
+"identifier": "d"
+}
+
+
+]
+}
+}
+
+
+]
+}
+}
+}
+
+
+]
+}
+}
+]
+}
